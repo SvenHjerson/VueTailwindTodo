@@ -1,25 +1,19 @@
-# VueTailwindTodo
-A rough Vue todo app with Tailwind when learning Vue with Erik's Vue360 course
+# Vue with Tailwind Todo App
 
-## Project setup
+A rough Vue todo app using Tailwind when learning Vue with Erik's Vue360 course
+
+See [Demo](https://vue-tailwind-todo-example.netlify.app/) hosted on Netlify.
+
+The first go already uses some computed properties, but it still needs a bit of refactoring to move stuff to separate components, perhaps add some routes ... maybe use local storage etc.
+
+## Project setup ... as per usual
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### and then of course the usual serve and build commands
 
-### Compiles and minifies for production
 ```
-npm run build
+npm run serve / build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
