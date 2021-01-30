@@ -125,76 +125,76 @@
 
 <script>
 export default {
-  name: 'Todos',
+  name: "Todos",
   data() {
     return {
-      newTodo: '',
+      newTodo: "",
       todos: [],
-      todosShown: 'All',
+      todosShown: "All",
       viewOptions: [
-        { show: 'All', current: true },
-        { show: 'Active', current: false },
-        { show: 'Completed', current: false }
+        { show: "All", current: true },
+        { show: "Active", current: false },
+        { show: "Completed", current: false }
       ]
-    }
+    };
   },
   methods: {
     addTodo() {
-      var value = this.newTodo && this.newTodo.trim()
+      var value = this.newTodo && this.newTodo.trim();
       if (!value) {
-        return
+        return;
       }
       var todo = {
         id: this.todos.length,
         description: value,
         completed: false
-      }
-      this.todos.push(todo)
-      this.newTodo = ''
+      };
+      this.todos.push(todo);
+      this.newTodo = "";
     },
     changeView(selectedView) {
       for (let i = 0; i < this.viewOptions.length; i++) {
         if (this.viewOptions[i].show !== selectedView) {
-          this.viewOptions[i].current = false
+          this.viewOptions[i].current = false;
         } else {
-          this.viewOptions[i].current = true
+          this.viewOptions[i].current = true;
         }
-        this.todosShown = selectedView
+        this.todosShown = selectedView;
       }
     },
     removeTodo(todo) {
-      this.todos.splice(this.todos.indexOf(todo), 1)
+      this.todos.splice(this.todos.indexOf(todo), 1);
     }
   },
   computed: {
     filteredTodos() {
-      if (this.todosShown === 'All') {
-        return this.todos
-      } else if (this.todosShown === 'Active') {
+      if (this.todosShown === "All") {
+        return this.todos;
+      } else if (this.todosShown === "Active") {
         return this.todos.filter(function(todo) {
-          return !todo.completed
-        })
+          return !todo.completed;
+        });
       } else {
         //completed
         return this.todos.filter(function(todo) {
-          return todo.completed
-        })
+          return todo.completed;
+        });
       }
     },
     remainingTodos() {
       var remaining = this.todos.filter(function(todo) {
-        return !todo.completed
-      })
-      return remaining.length
+        return !todo.completed;
+      });
+      return remaining.length;
     },
     todosCompleted() {
       var completed = this.todos.filter(function(todo) {
-        return todo.completed
-      })
-      return completed.length
+        return todo.completed;
+      });
+      return completed.length;
     }
   }
-}
+};
 </script>
 
 <style lang="css"></style>
